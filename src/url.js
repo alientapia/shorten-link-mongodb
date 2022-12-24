@@ -13,7 +13,7 @@ const Url = require('./UrlModel');
 // @description     Create short URL
 
 // The API base Url endpoint
-const baseUrl = 'http:localhost:4000';
+const baseUrl = 'http://localhost:4000';
 
 router.post('/shorten', async (req, res) => {
   const { longUrl } = req.body; // destructure the longUrl from req.body.longUrl
@@ -39,7 +39,8 @@ router.post('/shorten', async (req, res) => {
 
       // url exist and return the respose
       if (url) {
-        res.json(url);
+        const { shortUrl: newUrl } = url;
+        res.json({ newUrl });
       } else {
         // join the generated short code the the base url
         const shortUrl = baseUrl + '/' + urlCode;
@@ -51,8 +52,9 @@ router.post('/shorten', async (req, res) => {
           urlCode,
           date: new Date(),
         });
-        await url.save();
-        res.json(url);
+        const { shortUrl: newUrl } = await url.save();
+
+        res.json({ newUrl });
       }
     } catch (err) {
       // exception handler

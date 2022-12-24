@@ -4,9 +4,6 @@ const router = express.Router();
 
 const Url = require('./UrlModel');
 
-// : app.get(/:code)
-
-// @route       GET /:code
 // @description    Redirect to the long/original URL
 router.get('/:code', async (req, res) => {
   try {

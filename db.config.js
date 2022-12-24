@@ -1,14 +1,7 @@
 // import mongoose package
 const mongoose = require('mongoose');
-
-// declare a Database string URI
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-const dbName = process.env.DB_NAME;
-//mongodb://balta:e296cd9f@localhost:27017/admin
-
-//const DB_URI = `mongodb://${dbUser}:${dbPassword}@localhost:27017/${dbName}`;
-const DB_URI = `mongodb://localhost:27017/urlshortener`;
+const DB_URI =
+  'mongodb://rpamongo:Q4ifWqjd6vr8is5PlFYkMNP68jO7rjc21Pxdh2qVSDumlEMyWjBoOZ1wgNki7UzgUvYSfEIAVBXGACDbS1iCsA==@rpamongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@rpamongo@';
 // establishing a database connection
 mongoose.connect(DB_URI, {
   useNewUrlParser: true,
@@ -17,5 +10,4 @@ mongoose.connect(DB_URI, {
 
 const connection = mongoose.connection;
 
-// export the connection object
 module.exports = connection;
