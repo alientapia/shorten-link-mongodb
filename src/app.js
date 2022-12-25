@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 
-const routerUrl = require('./routes/url');
-const routerRedirect = require('./routes/redirect');
+const routerUrl = require('./urls/routes/url');
+const routerRedirect = require('./urls/routes/redirect');
 
 //settings
 app.set('port', process.env.PORT || 4000);

@@ -5,6 +5,6 @@ require('./database');
 
 app.listen(app.get('port'), () =>
   console.log(
-    `\x1b[32mServer app listening on port: \x1b[33m${config.baseUrl}!`
+    `\x1b[32mServer app listening on port: \x1b[33m${config.BASE_URL}!`
   )
 );
