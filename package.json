@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "export NODE_ENV=development&& nodemon index.js",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "Alien tapia",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.6.5",
     "morgan": "^1.10.0",
     "shortid": "^2.2.16",

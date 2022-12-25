@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const Url = require('../models/UrlModel');
+const Url = require('../model/UrlModel');
 
 router.get('/:code', async (req, res) => {
   try {

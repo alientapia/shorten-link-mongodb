@@ -1,14 +1,13 @@
-const config = require('../../../config');
 const express = require('express');
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 
 const router = express.Router();
 
-const Url = require('../models/UrlModel');
+const Url = require('../model/UrlModel');
 
 // The API base Url endpoint
-const baseUrl = config.BASE_URL;
+const baseUrl = process.env.BASE_URL;
 
 router.post('/', async (req, res) => {
   const { longUrl } = req.body;
