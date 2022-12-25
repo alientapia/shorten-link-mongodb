@@ -6,5 +6,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then((db) => console.log(`Database is connected to ${db.connection.name}`))
+  .then((db) =>
+    console.log(`\x1b[32mDatabase is connected to "${db.connection.name}"`)
+  )
   .catch((err) => console.log(err));
