@@ -3,6 +3,7 @@ const path = require('path');
 dotenv.config({
   path: path.resolve(__dirname, process.env.NODE_ENV + '.env'),
 });
+//connecting database
 require('./database');
 const app = require('./src/app');
 
