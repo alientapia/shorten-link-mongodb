@@ -1,3 +1,4 @@
+const config = require('../config');
 const express = require('express');
 const validUrl = require('valid-url');
 const shortid = require('shortid');
@@ -7,7 +8,7 @@ const router = express.Router();
 const Url = require('./UrlModel');
 
 // The API base Url endpoint
-const baseUrl = 'http://localhost:4000';
+const baseUrl = config.baseUrl;
 
 router.post('/shorten', async (req, res) => {
   const { longUrl } = req.body;
