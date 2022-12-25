@@ -3,8 +3,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 
-const routerRedirect = require('./redirect');
-const routerUrl = require('./url');
+const routerUrl = require('./routes/url');
+const routerRedirect = require('./routes/redirect');
 
 //settings
 app.set('port', process.env.PORT || 4000);
@@ -18,6 +18,6 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 app.use('/', routerRedirect);
-app.use('/api/url', routerUrl);
+app.use('/', routerUrl);
 
 module.exports = app;

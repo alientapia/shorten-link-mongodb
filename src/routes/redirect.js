@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const Url = require('./UrlModel');
+const Url = require('../UrlModel');
 
 router.get('/:code', async (req, res) => {
   try {
@@ -18,6 +18,10 @@ router.get('/:code', async (req, res) => {
     console.error(err);
     res.status(500).json('Server Error');
   }
+});
+
+router.get('/', async (req, res) => {
+  res.send(`<h2>Acortador de link v1.0.0</h2>`);
 });
 
 module.exports = router;

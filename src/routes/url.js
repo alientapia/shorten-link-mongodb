@@ -1,16 +1,16 @@
-const config = require('../config');
+const config = require('../../config');
 const express = require('express');
 const validUrl = require('valid-url');
 const shortid = require('shortid');
 
 const router = express.Router();
 
-const Url = require('./UrlModel');
+const Url = require('../UrlModel');
 
 // The API base Url endpoint
 const baseUrl = config.baseUrl;
 
-router.post('/shorten', async (req, res) => {
+router.post('/', async (req, res) => {
   const { longUrl } = req.body;
 
   if (!validUrl.isUri(baseUrl)) {
