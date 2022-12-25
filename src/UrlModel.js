@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// instantiate a mongoose schema
 const URLSchema = new mongoose.Schema(
   {
     urlCode: String,
@@ -16,6 +15,4 @@ const URLSchema = new mongoose.Schema(
     versionKey: false,
   }
 );
-
-// create a model from schema and export it
 module.exports = mongoose.model('Url', URLSchema);
