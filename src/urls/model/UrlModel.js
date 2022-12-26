@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const URLSchema = new mongoose.Schema(
+const urlSchema = new Schema(
   {
     urlCode: String,
     longUrl: String,
@@ -15,4 +15,4 @@ const URLSchema = new mongoose.Schema(
     versionKey: false,
   }
 );
-module.exports = mongoose.model('Url', URLSchema);
+module.exports = model('Url', urlSchema);
