@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-function verifyToken(req, res, next) {
+const User = require('../users/model/User');
+async function verifyToken(req, res, next) {
   try {
     const token = req.headers['x-access-token'];
     if (!token) {
@@ -9,6 +10,14 @@ function verifyToken(req, res, next) {
       });
     }
     const { id } = jwt.verify(token, process.env.SECRET);
+
+    const userFound = await User.findById({ _id: id });
+    if (!userFound) {
+      return res.status(401).json({
+        auth: false,
+        message: 'No token provided',
+      });
+    }
     req.userId = id;
     next();
   } catch (error) {
